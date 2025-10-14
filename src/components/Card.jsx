@@ -1,14 +1,25 @@
-export default function Card({id, name, type, hp, attack, defense, image, abilities}) {
+export default function Card({id, name, weakness, type, hp, attack, defense, image, abilities}) {
     const typeToList = type.map((t)=>{
         return(
             <>
-                <li>{t}</li>
+                <li>{t}</li> <span>{isGrass(t)}</span>
             </>
         )
     })
+
     function highAttack(attack){
         if(attack>60){
             return(<p>High Attack Damage!</p>)
+        }
+    }
+
+    function isGrass(type) {
+        if (type === "Grass") {
+            return (
+                <>
+                    <p>{weakness} is super effective!</p>
+                </>
+            )
         }
     }
 
