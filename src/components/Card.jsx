@@ -1,4 +1,4 @@
-export default function cards([id, name, type, hp, attack, defense, image, abilities]) {
+export default function Card({id, name, type, hp, attack, defense, image, abilities}) {
     function typeToList(type) {
         type.map((element) => {
             return (<li key = {id}>{element}</li>)
