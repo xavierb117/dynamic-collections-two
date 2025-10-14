@@ -2,7 +2,7 @@ export default function Card({id, name, weakness, type, hp, attack, defense, ima
     const typeToList = type.map((t)=>{
         return(
             <>
-                <li>{t}</li> <span>{isGrass(t)}</span>
+                <li>{t}</li> <span>{isGrass(t)}</span><span>{isFire(t)}</span>
             </>
         )
     })
@@ -14,10 +14,19 @@ export default function Card({id, name, weakness, type, hp, attack, defense, ima
     }
 
     function isGrass(type) {
-        if (type === "Grass") {
+        if (type === "Grass" && weakness == "Fire") {
             return (
                 <>
-                    <p>{weakness} is super effective!</p>
+                    <p>{weakness} is super effective vs {type}</p>
+                </>
+            )
+        }
+    }
+    function isFire(type) {
+        if (type === "Fire" && weakness == "Water") {
+            return (
+                <>
+                    <p>{weakness} is super effective vs {type}</p>
                 </>
             )
         }

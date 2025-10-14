@@ -3,15 +3,27 @@ import Card from './Card.jsx'
 import {useState} from 'React'
 
 export default function Main() {
-    const [weakness, setWeakness] = useState("fire");
+    const [weakness, setWeakness] = useState("Fire");
 
-     function fireWeakness() {
-        setWeakness("fire")
+     function waterWeakness() {
+        setWeakness("Water")
+    }
+    function fireWeakness(){
+        setWeakness("Fire")
+    }
+
+    function flipWeakness(){
+        if(weakness=="Water"){
+            fireWeakness();
+        }else{
+            waterWeakness();
+        }
     }
 
     const mappedData = data.map((pokemon) => {
         return (
             <>
+               
                 <Card 
                     key = {pokemon.id}
                     name = {pokemon.name}
@@ -29,6 +41,7 @@ export default function Main() {
 
     return (
         <>
+            <button onClick={flipWeakness}>{weakness}</button>
             {mappedData}
         </>
     )
