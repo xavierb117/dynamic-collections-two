@@ -1,6 +1,6 @@
 import data from '../data.js'
 import Card from './Card.jsx'
-import {useState} from 'React'
+import {useState} from 'react'
 
 export default function Main() {
     const [weakness, setWeakness] = useState("Fire");
@@ -23,18 +23,19 @@ export default function Main() {
     const mappedData = data.map((pokemon) => {
         return (
             <>
-               
-                <Card 
-                    key = {pokemon.id}
-                    name = {pokemon.name}
-                    weakness = {weakness}
-                    type = {pokemon.type}
-                    hp = {pokemon.hp}
-                    attack = {pokemon.attack}
-                    defense = {pokemon.defense}
-                    image = {pokemon.image}
-                    abilities = {pokemon.abilities}
-                />
+               <div id = "row">
+                    <Card 
+                        key = {pokemon.id}
+                        name = {pokemon.name}
+                        weakness = {weakness}
+                        type = {pokemon.type}
+                        hp = {pokemon.hp}
+                        attack = {pokemon.attack}
+                        defense = {pokemon.defense}
+                        image = {pokemon.image}
+                        abilities = {pokemon.abilities}
+                    />
+                </div>
             </>
         )
     })
