@@ -6,7 +6,7 @@ export default function Main() {
         return (
             <>
                 <Card 
-                id = {pokemon.id}
+                key = {pokemon.id}
                 name = {pokemon.name}
                 type = {pokemon.type}
                 hp = {pokemon.hp}
