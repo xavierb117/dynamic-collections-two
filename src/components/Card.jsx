@@ -2,7 +2,7 @@ export default function Card({id, name, weakness, type, hp, attack, defense, ima
     const typeToList = type.map((t)=>{
         return(
             <>
-                <li>{t}</li> <span>{isGrass(t)}</span><span>{isFire(t)}</span>
+                <li key = {id}>{t}</li> <span>{isGrass(t)}</span><span>{isFire(t)}</span>
             </>
         )
     })
@@ -37,7 +37,7 @@ export default function Card({id, name, weakness, type, hp, attack, defense, ima
             <h3>{name}</h3>
             <img src = {image} alt = {`Picture of ${name}`}></img>
             <h4>Type:</h4>
-            <ul>
+            <ul className = "bullets">
                 {typeToList}
             </ul>
             <h4>Stats:</h4>
