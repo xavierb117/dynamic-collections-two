@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <>
-            <h1>This is the footer</h1>
+            <h1>By Jacob and Xavier</h1>
         </>
     )
 }
